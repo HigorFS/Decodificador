@@ -1,21 +1,14 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background: var(--corsecundaria);
+    margin: 0;
+    padding: 0;
 }
 
 :root {
     --corprincipal: #000000;
     --corsecundaria: #2ab9cc;
     --cortitulo: #888899;
-}
-
-body {
-    background: var(--corsecundaria);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .logo {
@@ -25,21 +18,20 @@ body {
 }
 
 .logo img {
-    max-width: 70px;
-    max-height: 70px;
-    width: auto;
-    height: auto;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
 }
 
 .container-input {
     display: flex;
-    justify-content: space-between;
-    padding: 2% 0 0 4%;
-}
-
-.container-input .input {
-    width: 400px;
-    height: 330px;
+    flex-direction: column;
+    align-items: center;
 }
 
 #input-text {
@@ -56,24 +48,21 @@ body {
 }
 
 #output {
-    display: flex;
-    flex-direction: column;
     border: 3px solid var(--cortitulo);
     border-radius: 20px;
     width: 350px;
-    height: 400px;
     margin-right: 3%;
 }
 
 #output h2 {
     text-align: center;
     font-size: 20px;
-    color: var(--cortitulo)
+    color: var(--cortitulo);
 }
 
-#output span {
-    font-size: 16px;
+#output h3 {
     text-align: center;
+    font-size: 16px;
 }
 
 #output img {
@@ -84,15 +73,20 @@ body {
     margin-top: 4%;
 }
 
-.container-buttons button{
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.container-buttons button {
     border: 2px solid var(--cortitulo);
     border-radius: 10px;
     text-decoration: none;
-    color:#97198b;
+    color: #97198b;
     width: 150px;
     height: 50px;
-    margin-left: 4%;
-    cursor: pointer;
 }
 
 .button-copiar {
@@ -113,7 +107,6 @@ body {
 }
 
 .rodape {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -124,6 +117,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 1rem;
 }
 
 .rodape h3 {
@@ -138,4 +132,73 @@ body {
 
 .icons ion-icon {
     color: var(--corsecundaria);
+}
+
+@media (max-width: 768px) {
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .container-input {
+        bottom: 0;
+        width: 100%;
+        height: 10%; /* altura do rodapé */
+        background: var(--corsecundaria);
+        color: var(--cortitulo);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    .container-input .input {
+        flex-wrap: wrap;
+    }
+
+    #input-text {
+        flex-wrap: wrap;
+        font-size: 16px;
+        width: auto;
+        height: auto;
+    }
+
+    #output {
+        border: 2px solid var(--cortitulo);
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%; /* altura do rodapé */
+        background: var(--corsecundaria);
+        color: var(--cortitulo);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    #output img {
+        max-width: 100%;
+        max-height: 100px;
+    }
+
+    .container-buttons button, .button-copiar {
+        width: 80%;
+        margin-left: 0;
+        margin-top: 5%;
+        margin-bottom: 0;
+    }
+
+    .logo img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .rodape h3 {
+        font-size: 14px;
+    }
 }
